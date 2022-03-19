@@ -24,15 +24,21 @@ public class ProductsService  {
         return productsRepository.save(usuario);
     }
 
-    public ProductsModel editarProductos(ProductsModel usuario){
-        return productsRepository.save(usuario);
-    }
+ 
 
+    public ProductsModel updateProductos (ProductsModel usuario, int id)   
+    {  
+        return productsRepository.save(usuario);
+    }  
 
     public Optional<ProductsModel> obtenerPorId(Long id){
         return productsRepository.findById(id);
     }
 
+   
+
+
+  
 
     public ArrayList<ProductsModel>  obtenerPorStock(Integer Stock) {
         return productsRepository.findByStock(Stock);

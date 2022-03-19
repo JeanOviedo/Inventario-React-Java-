@@ -33,11 +33,16 @@ public class  ProductsController {
     }
 
 
-    @PutMapping()
-    public ProductsModel editarProductos(@RequestBody ProductsModel usuario){
-        return this.productsService.editarProductos(usuario);
+    @PutMapping(path = "/{id}")
+    public ProductsModel  updateProductos(@RequestBody ProductsModel usuario, @PathVariable int id) {
+        return productsService.updateProductos(usuario, id);
     }
 
+
+
+
+
+    
     
 
     @GetMapping( path = "/{id}")
