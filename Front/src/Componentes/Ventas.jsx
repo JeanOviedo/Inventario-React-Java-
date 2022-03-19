@@ -85,40 +85,21 @@ export default function Product() {
     <Fragment>
       <div className="container2" key={Math.random(5)}>
         <br></br> <br></br> <br></br>
-        {console.log(todos, "TOFDOS FRONT")}
+      
         {todos
           ? todos.map((todos) => (
-              <div className="card" key={Math.random(5)}>
+              <div className="card2" key={Math.random(5)}>
                 <div key={Math.random(5)}>
                   <h3> {todos.nombre}</h3>
-                  <p>Precio: $ {todos.precio}</p>
-                  <p>Categoria: {todos.categoria}</p>
                   <p>
-                     Ref: {todos.referencia}{" "}
+                    Ventas: {todos.ventas} 
                   </p>
-                  <p>
-                    Peso: {todos.peso} - Stock: {todos.stock}{" "}
-                  </p>
-                  <button className="buscarboton" onClick={(evento) => {
-                        handleSubmitComprar(evento, todos);
-                      }} id={Math.random(5)}>
-                    Comprar
-                  </button>
+                 
                 
-                    <button
-                      onClick={(evento) => {
-                        handleClickEliminar(evento, todos.id);
-                      }}
-                      className="buscarboton"
-                    >
-                      Eliminar
-                    </button>
+                    
                
                   
-                    <button onClick={(evento) => {handleClickEditarLocal(evento, todos);
-                      }}  className="buscarboton">
-                      Editar
-                    </button>
+                    
                  
                 </div>
               </div>

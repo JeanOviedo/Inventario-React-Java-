@@ -96,6 +96,29 @@ background-color: #f8ba3e;
   
 }
 
+
+
+.card2 {
+  height: 128px;
+ 
+background-color: #f8ba3e;
+  border-radius: 5px;
+  
+  
+ 
+  margin: 1%;
+  text-align: center;
+  align-items: center;
+  transition: top ease 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in 0.3s;
+  overflow: hidden;
+  padding: 2px;
+  
+}
+
+
 .card p {
   font-size: 12px;
   color:  #3d37b3;

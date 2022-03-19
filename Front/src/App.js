@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./Componentes/Navbar";
 import Products  from "./Componentes/Products";
 import Contacto from "./Componentes/Contacto";
-
+import Ventas from "./Componentes/Ventas";
 
 
 function App() {
@@ -26,6 +26,11 @@ function App() {
           <Contacto />
         </Route>
         
+
+        <Route exact path="/ventas">
+          <Ventas />
+        </Route>
+
       </header>
     </div>
   );
