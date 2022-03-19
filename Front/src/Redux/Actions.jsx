@@ -46,6 +46,24 @@ export function Guardar(producto) {
 
 
 
+// ----------------- Comprar -----------------//8
+export function Comprar(producto) {
+    return async function (dispatch) {
+        try {
+
+            const dato = await axios.put("http://localhost:8080/products/7/", producto);
+            dispatch(ActionTodos())
+            dispatch(ModalEdit(false))
+
+            console.log(producto, "producto")
+
+        } catch (error) {
+            console.log(error, "error.message");
+
+        }
+    };
+}
+
 
 // ----------------- Actualizar -----------------//8
 export function Actualizar(producto) {

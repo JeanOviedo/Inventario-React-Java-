@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
-import { ActionTodos, Eliminar , ModalEdit, EditLocal} from "../Redux/Actions";
+import { ActionTodos, Eliminar , ModalEdit, EditLocal , Comprar} from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
 
 import New from "./New";
@@ -28,6 +28,25 @@ export default function Product() {
   }
 
   
+
+
+  function handleSubmitComprar(evento, ok) {
+    evento.preventDefault();
+    
+    dispatch(Comprar({
+        id: ok.id,
+        nombre: ok.nombre,
+        referencia: ok.referencia,
+        precio: ok.precio,
+        peso: ok.peso,
+        categoria: ok.categoria,
+        stock: ok.stock - 1
+    }));
+
+    
+
+}
+
 
   function handleClickEditarLocal(evento, data) {
     evento.preventDefault();
@@ -60,10 +79,12 @@ export default function Product() {
                   <p>
                     Disponible: {todos.peso} - Ref: {todos.stock}{" "}
                   </p>
-                  <button className="buscarboton" id={Math.random(5)}>
+                  <button className="buscarboton" onClick={(evento) => {
+                        handleSubmitComprar(evento, todos);
+                      }} id={Math.random(5)}>
                     Comprar
                   </button>
-                  <Link to={`/detalles/${todos.id}`}>
+                
                     <button
                       onClick={(evento) => {
                         handleClickEliminar(evento, todos.id);
@@ -72,7 +93,7 @@ export default function Product() {
                     >
                       Eliminar
                     </button>
-                  </Link>
+               
                   
                     <button onClick={(evento) => {handleClickEditarLocal(evento, todos);
                       }}  className="buscarboton">
