@@ -10,13 +10,12 @@ public class ProductsModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
     private Long id;
-
     private String nombre;
     private String referencia;
     private Integer precio;
-    private String peso;
+    private Integer peso;
     private String categoria;
-    private int Stock;
+    private int stock;
     private String date;
 
    
@@ -72,7 +71,7 @@ public class ProductsModel {
     }
 
       public void setStock(Integer stock){
-        this.stock = stock
+        this.stock = stock;
     }
 
     public Integer getStock(){

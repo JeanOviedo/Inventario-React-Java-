@@ -16,6 +16,7 @@
 	<description>inventario Konecta by Jean Oviedo</description>
 	<properties>
 		<java.version>11</java.version>
+		 
 	</properties>
 	<dependencies>
 		<dependency>
@@ -49,6 +50,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+  
 			</plugin>
 		</plugins>
 	</build>

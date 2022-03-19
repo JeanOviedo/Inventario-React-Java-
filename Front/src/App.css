@@ -1,3 +1,19 @@
+
+
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
+  background-color: #3855d8;
+
+  margin: 0;
+}
+
+
+
+a{
+  color: #ffffff;
+
+}
 .App {
   text-align: center;
 }
@@ -14,7 +30,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #e5e8ee;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,6 +39,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.container2 {
+
+  text-align: center;
+   width: 100%;
+  
+ }
 
 .App-link {
   color: #61dafb;
@@ -35,4 +58,144 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.navbar {
+  display: flex;
+  padding: 5px;
+  background-color: #3f37c9;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  opacity: 90%;
+ 
+}
+
+
+.card {
+  height: 198px;
+ 
+background-color: #f8ba3e;
+  border-radius: 5px;
+  
+  
+  display: inline-flex;
+  margin: 1%;
+  text-align: center;
+  align-items: center;
+  transition: top ease 0.5s;
+  cursor: pointer;
+  text-decoration: none;
+  transition: ease-in 0.3s;
+  overflow: hidden;
+  padding: 5px;
+  
+}
+
+.card p {
+  font-size: 12px;
+}
+
+.card h3{
+  font-size: 17px;
+  text-transform: capitalize;
+  color: #f34371;
+}
+.modal {
+
+  text-align: center;
+  margin: 2px;
+
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  top: 20%;
+  left: 27%;
+  width: 40%; /* Full width */
+  height: 76%; /* Full height */
+  overflow: none; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  border: 2px;
+  border-radius: 1em;
+  opacity: 98%;
+  text-transform: capitalize;
+  border-radius: 6.5px;
+ 
+}
+
+.ico {
+  width: 30px;
+  height: 30px;
+  margin: 7px;
+  cursor: pointer;
+}
+
+.ico2 {
+  width:160px;
+  height: 160px; 
+  margin: 3px;
+  cursor: pointer;
+}
+.logo {
+  width: 80%;
+  position: relative;
+  left: 13px;
+  top: 2px;
+}
+
+.logodiv {
+  width: 20%;
+}
+
+.menu {
+  display: flex;
+  padding: 5px;
+ 
+}
+
+
+.menu li {
+  list-style: none;
+  margin: 0.3em;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  background-color:  #3d37b3;
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.1em;
+  z-index: 2;
+  padding: 8px;
+  border-radius: 7px;
+
+}
+
+.menu .active {
+  color: #67696b;
+}
+
+.menu a:hover {
+  background-color: #c6c4e2;
+  color: #3e3d70;
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.5em;
+  z-index: 2;
+  padding: 14px;
+}
+
+
+.footer {
+  background-color: #322d91;
+  color: white;
+  padding: 35px;
+  overflow: hidden;
+  height: 200%;
+  height: 200px;
 }
