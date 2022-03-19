@@ -6,14 +6,17 @@ import {
     MODALNEW,
     QUITA_MENU,
     ERROR,
-    ONE,
+    MODALEDIT,
+    LOCALEDIT
+   
 } from "./Actions";
 const initialState = {
     todos: [],
     one: [],
     modalnew: false,
+    modaledit: false,
     error: "",
-    
+    localedit: [],
     modal: {
         visible: false,
         msg: "",
@@ -41,12 +44,7 @@ export default function rooReducer(state = initialState, action) {
                 loading: action.payload
             };
 
-            case ONE:
-            return {
-                ... state,
-                one: action.payload
-            };
-
+           
 
         case MODAL:
             return {
@@ -64,8 +62,18 @@ export default function rooReducer(state = initialState, action) {
                 };
     
 
-
-
+                case MODALEDIT:
+                    return {
+                        ... state,
+                        modaledit: action.payload,
+                    };
+        
+                    case LOCALEDIT:
+                        return {
+                            ... state,
+                            localedit: action.payload,
+                        };
+            
         
 
             case ERROR:

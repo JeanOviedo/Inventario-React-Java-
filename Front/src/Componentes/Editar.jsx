@@ -1,35 +1,36 @@
 import React, {Fragment, useEffect, useState, useRef} from "react";
-import {ModalNew, Guardar} from "../Redux/Actions";
+import {ModalEdit, Guardar, Actualizar} from "../Redux/Actions";
 import {useSelector, useDispatch} from "react-redux";
-import Img from "../Icos/new.png";
+import Img from "../Icos/edit.png";
 
 
-export default function New() {
+export default function Editar() {
 
     const [nombre, setnombre] = useState("");
     const [referencia, setreferencia] = useState("");
     const [precio, setprecio] = useState("");
     const [peso, setpeso] = useState("");
     const [categoria, setcategoria] = useState("");
+  
     const [stock, setstock] = useState("");
+  
+    const edit = useSelector((state) => state.localedit);
 
-
+   
+    
     const dispatch = useDispatch();
     function handleClick(evento) {
         evento.preventDefault();
-        dispatch(ModalNew(false));
-    }
-
-    function handleClickGuardar(evento) {
-        evento.preventDefault();
-        dispatch(ModalNew(false));
+        dispatch(ModalEdit(false));
     }
 
 
+    
     function handleSubmit(evento) {
         evento.preventDefault();
-        dispatch(Guardar({
-
+        
+        dispatch(Actualizar({
+            id: edit.id,
             nombre: nombre,
             referencia: referencia,
             precio: precio,
@@ -39,12 +40,7 @@ export default function New() {
 
         }));
 
-        setnombre("");
-        setcategoria("");
-        setpeso("");
-        setreferencia("");
-        setstock("");
-        setprecio("");
+        
 
     }
 
@@ -85,6 +81,10 @@ export default function New() {
 
     }
 
+
+   
+
+
     return (
         <Fragment>
             <div className="modal">
@@ -93,9 +93,10 @@ export default function New() {
                 <img src={Img}
                     className="ico2"></img>
                 <form onSubmit={
-                    (event) => handleClickGuardar(event,)
+                    (event) => handleSubmit(event, edit.id)
                 }>
-                    <input placeholder="Nombre"
+                    <input placeholder={"Nombre: " + edit.nombre}
+                 
                         onChange={
                             (evento) => {
                                 handleName(evento);
@@ -104,18 +105,17 @@ export default function New() {
                         type="text"
                         required></input>
                 <br></br>
-                <input placeholder="Stock"
-                    onChange={
-                        (evento) => {
-                            handleStock(evento);
-                        }
-                    }
+                <input placeholder={"Stock: " + edit.stock}
+               
+                    onChange={event => setstock(event.target.value)} 
+                    
                     type="number"
                     required></input>
             <br></br>
 
 
-            <input placeholder="Precio"
+            <input placeholder={"Precio: " + edit.precio}
+           
                 onChange={
                     (evento) => {
                         handlePrecio(evento);
@@ -126,7 +126,8 @@ export default function New() {
         <br></br>
 
 
-        <input placeholder="Categoría"
+        <input placeholder={"Categoría: " + edit.categoria}
+   
             onChange={
                 (evento) => {
                     handleCategoria(evento);
@@ -137,7 +138,8 @@ export default function New() {
     <br></br>
 
 
-    <input placeholder="Peso"
+    <input placeholder={"Peso: " + edit.peso}
+   
         onChange={
             (evento) => {
                 handlePeso(evento);
@@ -148,7 +150,8 @@ export default function New() {
 <br></br>
 
 
-<input placeholder="Referencia"
+<input placeholder={"Referencia: " + edit.referencia}
+ 
     onChange={
         (evento) => {
             handleReferencia(evento);
@@ -157,6 +160,6 @@ export default function New() {
     type="text"
     required></input></form><button onClick={handleClick}
     className="buscarboton">Cerrar</button><button onClick={handleSubmit}
-    className="buscarboton">Guardar</button></div></Fragment>
+    className="buscarboton">Actualizar</button></div></Fragment>
     );
 }

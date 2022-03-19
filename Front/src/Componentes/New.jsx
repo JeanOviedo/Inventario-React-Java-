@@ -29,7 +29,7 @@ export default function New() {
     function handleSubmit(evento) {
         evento.preventDefault();
         dispatch(Guardar({
-
+        
             nombre: nombre,
             referencia: referencia,
             precio: precio,

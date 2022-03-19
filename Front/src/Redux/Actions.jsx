@@ -4,14 +4,15 @@ export const TODOS = "TODOS";
 export const ADD_MENU = "ADD_MENU";
 export const MODAL = "MODAL";
 export const MODALNEW = "MODALNEW";
+export const MODALEDIT= "MODALEDIT";
 export const QUITA_MENU = "QUITA_MENU";
 export const ERROR = "ERROR";
-export const ONE = "ONE";
+export const LOCALEDIT = "LOCALEDIT";
 
 export function ActionTodos() {
     return async function (dispatch) {
         try {
-            let response = await axios({url: "http://localhost:8080/products", method: "get"});
+            let response = await axios({url: "http://localhost:8080/products/", method: "get"});
 
 
             let data = response;
@@ -33,6 +34,27 @@ export function Guardar(producto) {
             const dato = await axios.post("http://localhost:8080/products", producto);
             dispatch(ActionTodos())
             dispatch(ModalNew(false))
+
+            console.log(producto, "producto")
+
+        } catch (error) {
+            console.log(error, "error.message");
+
+        }
+    };
+}
+
+
+
+
+// ----------------- Actualizar -----------------//8
+export function Actualizar(producto) {
+    return async function (dispatch) {
+        try {
+
+            const dato = await axios.put("http://localhost:8080/products/7/", producto);
+            dispatch(ActionTodos())
+            dispatch(ModalEdit(false))
 
             console.log(producto, "producto")
 
@@ -70,8 +92,8 @@ export const ElAddMenu = (data) => {
     return {type: ADD_MENU, payload: data};
 };
 
-export const ElAddTodoEdit = (data) => {
-    return {type: TODOS, payload: data};
+export const EditLocal = (data) => {
+    return {type: LOCALEDIT, payload: data};
 };
 
 export const ModalNo = (modal, msg) => {
@@ -81,4 +103,10 @@ export const ModalNo = (modal, msg) => {
 
 export const ModalNew = (ok) => {
     return {type: MODALNEW, payload: ok};
+};
+
+
+
+export const ModalEdit = (ok) => {
+    return {type: MODALEDIT, payload: ok};
 };
