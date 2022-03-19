@@ -34,17 +34,20 @@ export default function Navbar() {
                         <Link to="/">Productos</Link>
                     </li>
 
-
-                    <li>
-                        <Link to="/ventas">Ventas</Link>
-                    </li>
-
-
                     <li>
                         <Link to="#"
                             onClick={ handleClick
                         }>Nuevo</Link>
                     </li>
+
+                    <li>
+                        <Link to="/ventas">Ventas</Link>
+                    </li>
+
+                   
+
+
+                    
                    
                     <li>
                         <Link to="/contacto">Contacto</Link>

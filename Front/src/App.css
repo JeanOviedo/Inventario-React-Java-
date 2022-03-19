@@ -96,6 +96,15 @@ background-color: #f8ba3e;
   
 }
 
+.general {
+  color:#f8ba3e;
+  padding: 35px;
+  overflow: hidden;
+  height: 200%;
+ 
+  align-items: center;
+  text-align: center;
+}
 
 
 .card2 {

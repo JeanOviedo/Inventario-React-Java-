@@ -54,6 +54,7 @@ export default function Product() {
         categoria: ok.categoria,
         stock: ok.stock - 1,
         ventas :ok.ventas + 1,
+        date: new Date().toISOString().slice(0, 19).replace('T', ' '),
     }));
 
     dispatch(Modale({

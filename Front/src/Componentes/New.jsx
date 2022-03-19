@@ -24,7 +24,7 @@ export default function New() {
         evento.preventDefault();
         dispatch(ModalNew(false));
     }
-
+    
 
     function handleSubmit(evento) {
         evento.preventDefault();
@@ -35,7 +35,9 @@ export default function New() {
             precio: precio,
             peso: peso,
             categoria: categoria,
-            stock: stock
+            stock: stock,
+            ventas: 0,
+            date: new Date().toISOString().slice(0, 19).replace('T', ' '),
 
         }));
 

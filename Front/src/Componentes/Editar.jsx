@@ -41,6 +41,7 @@ export default function Editar() {
             categoria: categoria,
             stock: stock,
             ventas: edit.ventas,
+            date: new Date().toISOString().slice(0, 19).replace('T', ' '),
 
         }));
 
