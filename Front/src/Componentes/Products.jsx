@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState, useRef } from "react";
-import { ActionTodos, Eliminar , ModalEdit, EditLocal , Comprar} from "../Redux/Actions";
+import { ActionTodos, Eliminar , ModalEdit, EditLocal , Comprar , Modale} from "../Redux/Actions";
 import { useSelector, useDispatch } from "react-redux";
 
 import New from "./New";
-
+import Modal from "./Modal";
 import { Link } from "react-router-dom";
 import Editar from "./Editar";
 export default function Product() {
@@ -20,7 +20,7 @@ export default function Product() {
 
   let modalnew = useSelector((state) => state.modalnew);
   let modaledit= useSelector((state) => state.modaledit);
-
+  let modal= useSelector((state) => state.modal);
 
   function handleClickEliminar(evento, ide) {
     evento.preventDefault();
@@ -33,6 +33,16 @@ export default function Product() {
   function handleSubmitComprar(evento, ok) {
     evento.preventDefault();
     
+    if (ok.stock <= 0 ) {
+      dispatch(Modale({
+        visible: true,
+        msg: "ERROR No hay STOCK de este producto",
+        img : "https://icon-library.com/images/unhappy-icon/unhappy-icon-3.jpg"
+
+    }));
+    }
+    else 
+    {
     dispatch(Comprar({
         id: ok.id,
         nombre: ok.nombre,
@@ -40,9 +50,17 @@ export default function Product() {
         precio: ok.precio,
         peso: ok.peso,
         categoria: ok.categoria,
-        stock: ok.stock - 1
+        stock: ok.stock - 1,
+        ventas :ok.ventas + 1,
     }));
 
+    dispatch(Modale({
+      visible: false,
+     
+
+  }));
+
+  }
     
 
 }
@@ -109,6 +127,7 @@ export default function Product() {
         <br />
       </div>
       {modalnew == true ? <New></New> : ""}
+      {modal.visible.visible == true ? <Modal></Modal> : ""}
       {modaledit == true ? <Editar></Editar> : ""}
     </Fragment>
   );

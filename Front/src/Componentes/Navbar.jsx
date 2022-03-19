@@ -36,7 +36,7 @@ export default function Navbar() {
 
 
                     <li>
-                        <Link to="/ventas">Comprados</Link>
+                        <Link to="/ventas">Ventas</Link>
                     </li>
 
 

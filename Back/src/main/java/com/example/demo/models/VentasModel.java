@@ -1,10 +1,11 @@
 package com.example.demo.models;
 
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "productos")
-public class ProductsModel {
+@Table(name = "ventas")
+public class VentasModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,20 +16,12 @@ public class ProductsModel {
     private Integer precio;
     private Integer peso;
     private String categoria;
-    private int stock;
+    private int ventas;
     private String date;
-    private  int ventas;
 
    
    
-    public void setVentas(Integer ventas){
-        this.ventas = ventas;
-    }
-
-    public Integer getVentas(){
-        return ventas;
-    }
-
+    
 
     public void setPrecio(Integer precio){
         this.precio = precio;
@@ -78,12 +71,12 @@ public class ProductsModel {
         this.categoria = categoria;
     }
 
-      public void setStock(Integer stock){
-        this.stock = stock;
+      public void setVentas(Integer ventas){
+        this.ventas = ventas;
     }
 
-    public Integer getStock(){
-        return stock;
+    public Integer getVentas(){
+        return ventas;
     }
 
 

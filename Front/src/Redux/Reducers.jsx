@@ -1,10 +1,10 @@
 import {
     LOADING,
     TODOS,
-    ADD_MENU,
+  
     MODAL,
     MODALNEW,
-    QUITA_MENU,
+   
     ERROR,
     MODALEDIT,
     LOCALEDIT
@@ -20,7 +20,7 @@ const initialState = {
     modal: {
         visible: false,
         msg: "",
-        img: ""
+        img: "",
     },
     
     
@@ -51,7 +51,8 @@ export default function rooReducer(state = initialState, action) {
                 ... state,
                 modal: {
                     visible: action.payload,
-                    msg: action.msg
+                    msg: action.msg,
+                    img : action.img, 
                 }
             };
 

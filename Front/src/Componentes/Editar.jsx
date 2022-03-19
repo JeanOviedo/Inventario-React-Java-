@@ -39,7 +39,8 @@ export default function Editar() {
             precio: precio,
             peso: peso,
             categoria: categoria,
-            stock: stock
+            stock: stock,
+            ventas: edit.ventas,
 
         }));
 

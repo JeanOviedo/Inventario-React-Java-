@@ -98,24 +98,18 @@ export function Eliminar(id) {
     };
 }
 
-export const QuitarDeMenu = (data) => {
-    return {type: QUITA_MENU, payload: data};
-};
 
 export const ActionError = (data) => {
     return {type: ERROR, payload: data};
 };
 
-export const ElAddMenu = (data) => {
-    return {type: ADD_MENU, payload: data};
-};
 
 export const EditLocal = (data) => {
     return {type: LOCALEDIT, payload: data};
 };
 
-export const ModalNo = (modal, msg) => {
-    return {type: MODAL, payload: false, msg: msg, img: "https://freesvg.org/img/1538154274.png"};
+export const Modale = (modal, msg, img) => {
+    return {type: MODAL, payload: modal, msg: msg, img: img};
 };
 
 
